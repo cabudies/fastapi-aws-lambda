@@ -1,0 +1,21 @@
+name: FastAPI CI/CD
+
+on:
+  # Trigger the workflow to push
+  push:
+    branches:
+      # push events on main branch only
+      - main
+
+
+# this job defines a series of steps that execute on the same runner.
+jobs:
+
+  CI:
+    # defines the runner used in the workflow
+    runs-on: ubuntu-latest
+    steps:
+      # checkout repo so our workflow can access it
+      - uses: actions/checkout@v2
+
+
